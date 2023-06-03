@@ -1,7 +1,7 @@
 import maya.OpenMayaUI as OpenMayaUI
 import maya.OpenMaya as OpenMaya
-# from PyQt5 import QtCore, QtGui, QtWidgets
-# from PyQt5.QtCore import Qt
+
+
 from PySide2.QtCore import QSettings, Qt
 from PySide2.QtWidgets import *
 from PySide2.QtCore import *
@@ -13,20 +13,20 @@ from full_metal_toolset.full_metal_rig import *
 from full_metal_toolset.full_metal_scene import *
 from full_metal_toolset.full_metal_IO import *
 from full_metal_toolset.full_metal_skin import *
-# from full_metal_toolset.full_metal_Qt import *
+
 
 from full_metal_toolset.src.middleware import skinWheels
 import full_metal_toolset.full_metal_Qt as CustomQt
-# import middleware.sip
+
 import os
 import sys
 import subprocess
-# from full_metal_toolset.src.middleware.QxtSpanSlider import QxtSpanSlider
-# print(os.path.dirname(os.path.realpath(__file__)))
-# CURRENT_DIR = os.path.dirname(__file__)
-# def getMayaWindow():
-#     ptr = OpenMayaUI.MQtUtil.mainWindow()
-#     return sip.wrapinstance(long(ptr), QObject)
+
+
+
+
+
+
 
 
 
@@ -38,13 +38,13 @@ def getMayaWindow():
 class mainWindow(QMainWindow):
     def __init__(self, parent=getMayaWindow()):
         QMainWindow.__init__(self, parent)
-        # svn = os.path.dirname(os.path.realpath(__file__)).lower()
-        # svn = svn.split('devtools')[0] + 'devtools\\svn\\svn_1.9\\wgta-svn.exe'
-        # print(svn)
-        # print(os.path.dirname(os.path.realpath(__file__)))
-        # rev = ' rev.' + subprocess.Popen(
-        #     svn + " info --show-item=last-changed-revision " + os.path.dirname(os.path.realpath(__file__)), shell=True,
-        #     stdout=subprocess.PIPE).stdout.read()
+
+
+
+
+
+
+
         self.winName = 'Full metal toolset: '
         self.setWindowTitle(self.winName + 'Untitled*')
         self.instance = FullMetalRig()
@@ -54,7 +54,7 @@ class mainWindow(QMainWindow):
         self.nodesWatcher = ButtonWatcher()
         self.centralWidget = QWidget(self)
         self.centralWidget.setAutoFillBackground(True)
-        # self.centralWidget.setStyleSheet("  {border: 0px solid; background-color: rgb(50, 50, 50);}")
+
         self.centralWidget.setPalette(QPalette(QColor(50, 50, 50)))
         self.mainLayoutVertical = QVBoxLayout(self.centralWidget)
         self.mainLayoutVertical.setSpacing(0)
@@ -84,7 +84,7 @@ class mainWindow(QMainWindow):
             " QTabWidget {  border: 0px solid;}  QTabBar { background-color: rgb(68, 68, 68, );}")
         self.tab1 = QWidget()
         self.tab1.setAutoFillBackground(True)
-        # self.tab1.setPalette(QPalette(QColor(100,100,100)))
+
         self.tab1Layout = QHBoxLayout()
         self.tab1Layout.setContentsMargins(7, 5, 50, 5)
         self.tab1Layout.setSpacing(7)
@@ -94,13 +94,13 @@ class mainWindow(QMainWindow):
         self.toolPanelLayout.addWidget(self.toolPanelTab1)
         self.toolPanelTab1.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred);
         self.toolPanelTab2 = QTabWidget(self.toolPanelWidget)
-        # self.toolPanelTab2.setStyleSheet("  border: 0px solid; background-color: rgb(68, 68, 68, );")
+
         self.toolPanelTab2.setStyleSheet(
             "QTabWidget {  border: 0px solid;}  QTabBar {  border: 0px solid; background-color: rgb(68, 68, 68, );}")
         self.toolPanelTab2.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred);
         self.tab2 = QWidget()
         self.tab2.setAutoFillBackground(True)
-        # self.tab2.setPalette(QPalette(QColor(100,100,100)))
+
         self.tab2Layout = QHBoxLayout()
         self.tab2Layout.setContentsMargins(7, 5, 50, 5)
         self.tab2Layout.setSpacing(7)
@@ -115,7 +115,7 @@ class mainWindow(QMainWindow):
             " QTabWidget {  border: 0px solid;}  QTabBar { border: 0px solid; background-color: rgb(68, 68, 68, );}")
         self.tab3 = QWidget()
         self.tab3.setAutoFillBackground(True)
-        # self.tab3.setPalette(QPalette(QColor(100,100,100)))
+
         self.tab3Layout = QHBoxLayout()
         self.tab3Layout.setContentsMargins(7, 5, 50, 5)
         self.tab3Layout.setSpacing(7)
@@ -124,13 +124,13 @@ class mainWindow(QMainWindow):
         self.toolPanelTab3.addTab(self.tab3, "Nodes")
         self.toolPanelLayout.addWidget(self.toolPanelTab3)
         self.toolPanelTab4 = QTabWidget(self.toolPanelWidget)
-        # self.toolPanelTab3.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred);
+
         self.toolPanelTab4.setStyleSheet("  {border: 0px solid; background-color: rgb(68, 68, 68, );}")
         self.toolPanelTab4.setStyleSheet(
             " QTabWidget {  border: 0px solid;}  QTabBar { background-color: rgb(68, 68, 68, );}")
         self.tab4 = QWidget()
         self.tab4.setAutoFillBackground(True)
-        # self.tab4.setPalette(QPalette(QColor(100,100,100)))
+
         self.tab4Layout = QHBoxLayout()
         self.tab4Layout.setContentsMargins(7, 5, 5, 5)
         self.tab4Layout.setSpacing(7)
@@ -172,9 +172,9 @@ class mainWindow(QMainWindow):
             " QTabWidget {  border: 0px solid;}  QTabBar { background-color: rgb(68, 68, 68, );}")
         self.weightTab.setPalette(QPalette(QColor(68, 68, 68)))
         self.weightTabLayout = QVBoxLayout()
-        # self.weightTabLayout.setContentsMargins(7,5,50,5)
+
         self.weightTabLayout.setSpacing(15)
-        # self.weightTabLayout.setAlignment(Qt.AlignLeft)
+
         self.weightTab.setLayout(self.weightTabLayout)
         self.rightPanelWeightTab.addTab(self.weightTab, "Weight options")
         self.rightPanelLayout.addWidget(self.rightPanelWeightTab)
@@ -184,11 +184,11 @@ class mainWindow(QMainWindow):
             " QTabWidget {  border: 0px solid;}  QTabBar { background-color: rgb(68, 68, 68, );}")
         self.layersTab = QWidget()
         self.layersTab.setAutoFillBackground(True)
-        # self.layersTab.setPalette(QPalette(QColor(68,68,68)))
+
         self.layersTabLayout = QVBoxLayout()
         self.layersTabLayout.setContentsMargins(5, 5, 5, 5)
-        # self.weightTabLayout.setSpacing(1)
-        # self.weightTabLayout.setAlignment(Qt.AlignLeft)
+
+
         self.layersTab.setLayout(self.layersTabLayout)
         self.rightPanelLayersTab.addTab(self.layersTab, "Layers")
         self.rightPanelLayout.addWidget(self.rightPanelLayersTab)
@@ -199,15 +199,15 @@ class mainWindow(QMainWindow):
             " QTabWidget {  border: 0px solid;}  QTabBar { background-color: rgb(68, 68, 68, );}")
         self.exceptionTab = QWidget()
         self.exceptionTab.setAutoFillBackground(True)
-        # self.layersTab.setPalette(QPalette(QColor(68,68,68)))
+
         self.exceptionTabLayout = QVBoxLayout()
-        # self.weightTabLayout.setContentsMargins(7,5,50,5)
-        # self.weightTabLayout.setSpacing(1)
-        # self.weightTabLayout.setAlignment(Qt.AlignLeft)
+
+
+
         self.exceptionTab.setLayout(self.exceptionTabLayout)
         self.rightPanelExceptionTab.addTab(self.exceptionTab, "Exception")
         self.rightPanelLayout.addWidget(self.rightPanelExceptionTab)
-        # self.rightPanelExceptionTab.setSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred);
+
         self.lodsPanel = QHBoxLayout()
         self.lodsPanel.setAlignment(Qt.AlignLeft)
         self.lodsPanel.setSpacing(0)
@@ -224,14 +224,14 @@ class mainWindow(QMainWindow):
         self.skinWeightLine = QLineEdit()
         self.skinWeightLine.setDisabled(True)
         self.skinWeightLine.returnPressed.connect(lambda: self.setWeight())
-        # -------------------3 Weight------------------------------------------
+
         self.vBoneWeightLabel = QLabel()
         self.vBoneWeightLabel.setText("V bone Weight")
         self.vBoneWeight = QLineEdit()
         self.vBoneWeight.setText("0.0")
         self.vBoneWeight.setDisabled(True)
         self.vBoneWeight.returnPressed.connect(lambda: self.setWeight())
-        # ----------------------------------------------------------------------
+
         self.weightDivider = QPushButton()
         self.weightDivider.setFixedSize(50, 50)
         self.sharedWeight = QCheckBox()
@@ -243,22 +243,22 @@ class mainWindow(QMainWindow):
         self.weightGrid.setAlignment(Qt.AlignRight)
         self.weightGrid.setSpacing(1)
         self.wght = 0.1
-        # for j in range(4):
-        #     for i in range(3):
-        #         if self.wght > 1:
-        #             break
-        #         self.weightButton = QPushButton()
-        #         if self.wght == 0:
-        #             self.weightButton.setText(str(self.wght))
-        #             self.weightButton.setObjectName(str(self.wght))
-        #         else:
-        #             self.weightButton.setText(str(self.wght))
-        #             self.weightButton.setObjectName(str(self.wght))
-        #         self.weightButton.clicked.connect(self.setWeight(self.weightButton.text()))
-        #         self.weightButton.setFixedSize(30, 30)
-        #         self.wght = self.wght + 0.1
-        #         self.weightButton.setStyleSheet("  border: 0px solid; background-color: rgb(100, 100, 100, );")
-        #         self.weightGrid.addWidget(self.weightButton, j, i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         for i in range(10):
             if self.wght > 1:
                 break
@@ -297,14 +297,14 @@ class mainWindow(QMainWindow):
         self.gradientWeightCheckBox.setDisabled(True)
         self.gradientWeightCheckBox.released.connect(lambda: self.gradientWeightState())
         self.gradientWeightArrow = CustomQt.QGradientWeight()
-        # self.gradientSlider = QxtSpanSlider()
-        # self.gradientSlider.setRange(0, 10)
-        # self.gradientSlider.setSpan(0, 10)
-        # self.gradientSlider.setDisabled(True)
-        # self.gradientSlider.spanChanged[int, int].connect(lambda: self.gradientSetWeight())
-        # self.gradientSlider.spanChanged[int, int].connect(lambda: self.gradientText())
-        # self.gradientSlider.setGradientLeftColor(QColor(150, 150, 150))
-        # self.gradientSlider.setGradientRightColor(QColor(150, 150, 150))
+
+
+
+
+
+
+
+
         self.skingGrid = QGridLayout()
         self.skingGrid.setContentsMargins(10, 11, 0, 0)
         self.skinAllFromCurrent = QCheckBox()
@@ -322,10 +322,10 @@ class mainWindow(QMainWindow):
         self.skinOption4.setText("Clean up nodes")
         self.skingGrid.addWidget(self.skinAllFromCurrent, 0, 0)
         self.skingGrid.addWidget(self.skinAllSides, 1, 0)
-        # Misc buttons
+
         self.load_button = CustomQt.QToolNodeButton()
         self.load_button.setObjectName("load")
-        # self.load_button.setIcon(QSize(65, 65), QPixmap(dir + "\\src\\img\\" + "load.png"));
+
         self.load_button.setlabel("Load")
         self.load_button.clicked.connect(lambda: self.IO.loadProject())
 
@@ -338,17 +338,17 @@ class mainWindow(QMainWindow):
         self.forceClose_button.setObjectName("forceClose")
         self.forceClose_button.setFixedHeight(95)
         self.forceClose_button.setlabel(" ")
-        # self.forceClose_button.setIcon(QSize(65, 65), QIcon(dir + "\\src\\img\\" + "forceClose.png"));
+
         self.forceClose_button.clicked.connect(lambda: self.callHardReset())
 
         self.saveAs_button = CustomQt.QToolNodeButton()
         self.saveAs_button.setObjectName("save As")
         self.saveAs_button.setlabel("Save As")
-        # self.saveAs_button.setIcon(QSize(65, 65), QIcon(dir + "\\src\\img\\" + "saveAs.png"))
+
         self.saveAs_button.clicked.connect(lambda: self.IO.saveProjectAs())
 
         self.gatheringInformation_button = CustomQt.QToolNodeButton()
-        # self.gatheringInformation_button.setIcon(QSize(65, 65), QIcon(dir + "\\src\\img\\" + "run.png"));
+
         self.gatheringInformation_button.setlabel("Get data")
         self.gatheringInformation_button.setObjectName("gatheringInformationButton")
         self.gatheringInformation_button.clicked.connect(lambda: self.gatherNewInformation())
@@ -382,19 +382,19 @@ class mainWindow(QMainWindow):
         self.hideTracksR_button.clicked.connect(lambda: self.instance.hideGroup(self.instance.tracksData[1]))
         self.skin_track_button = CustomQt.QToolNodeButton()
         self.skin_track_button.setText("Track")
-        # self.skin_track_button.setIcon(QSize(65, 65), QIcon(dir + "\\src\\img\\" + "skinTrack2.png"));
+
         self.skin_track_button.setObjectName("skinButton")
         self.skin_track_button.setlabel("Skin track")
         self.skin_track_button.clicked.connect(lambda: self.skin("track"))
         self.skin_chassis_button = CustomQt.QToolNodeButton()
         self.skin_chassis_button.setText("Chassis")
-        # self.skin_chassis_button.setIcon(QSize(65, 65), QIcon(dir + "\\src\\img\\" + "skinChassis.png"));
+
         self.skin_chassis_button.setObjectName("skinButton")
         self.skin_chassis_button.setlabel("Skin chassis")
         self.skin_chassis_button.clicked.connect(lambda: self.skin("chassis"))
         self.skin_wheels_button = CustomQt.QToolNodeButton()
         self.skin_wheels_button.setText("Wheels")
-        # self.skin_wheels_button.setIcon(QSize(65, 65), QIcon(dir + "\\src\\img\\" + "skinWheels.png"));
+
         self.skin_wheels_button.setObjectName("skinWheelsButton")
         self.skin_wheels_button.setlabel("Skin wheels")
         self.skin_wheels_button.clicked.connect(lambda: self.callSkinWheels())
@@ -406,75 +406,75 @@ class mainWindow(QMainWindow):
         self.createLocatorsCurve_button.setText("Create Locator Curve")
         self.createLocatorsCurve_button.setObjectName("createLocatorCurveButton")
         self.createLocatorsCurve_button.clicked.connect(lambda: self.createLocatorsCurve())
-        # Tool buttons
+
         self.selectTool_button = CustomQt.QToolButton()
-        # self.selectTool_button.setText("Select")
+
         self.selectTool_button.setObjectName("selectTool")
-        # self.selectTool_button.setIcon(QIcon(dir + "\\src\\img\\" + "selectTool.png"));
-        # self.selectTool_button.setIconSize(QSize(65, 65));
+
+
         self.toolWatcher.addButton(self.selectTool_button)
         self.selectTool_button.clicked.connect(lambda: self.toolWatcher.setTool(self.selectTool_button))
         self.moveTool_button = CustomQt.QToolButton()
-        # self.moveTool_button.setText("Move")
+
         self.moveTool_button.setObjectName("moveTool")
-        # self.moveTool_button.setIcon(QIcon(dir + "\\src\\img\\" + "moveTool.png"));
-        # self.moveTool_button.setIconSize(QSize(65, 65));
+
+
         self.toolWatcher.addButton(self.moveTool_button)
         self.moveTool_button.clicked.connect(lambda: self.toolWatcher.setTool(self.moveTool_button))
         self.rotateTool_button = CustomQt.QToolButton()
-        # self.rotateTool_button.setText("Rotate")
+
         self.rotateTool_button.setObjectName("rotateTool")
-        # self.rotateTool_button.setIcon(QIcon(dir + "\\src\\img\\" + "rotateTool.png"));
-        # self.rotateTool_button.setIconSize(QSize(65, 65));
+
+
         self.toolWatcher.addButton(self.rotateTool_button)
         self.rotateTool_button.clicked.connect(lambda: self.toolWatcher.setTool(self.rotateTool_button))
         self.scaleTool_button = CustomQt.QToolButton()
-        # self.scaleTool_button.setText("Scale")
+
         self.scaleTool_button.setObjectName("scaleTool")
-        # self.scaleTool_button.setIcon(QIcon(dir + "\\src\\img\\" + "scaleTool.png"));
-        # self.scaleTool_button.setIconSize(QSize(65, 65));
+
+
         self.toolWatcher.addButton(self.scaleTool_button)
         self.scaleTool_button.clicked.connect(lambda: self.toolWatcher.setTool(self.scaleTool_button))
         self.moveNodeBox_button = CustomQt.QToolButton()
         self.moveNodeBox_button.setText("Move node box")
-        # self.moveNodeBox_button.setIconSize(QSize(65, 90));
+
         self.moveNodeBox_button.clicked.connect(lambda: self.toolWatcher.setTool(self.moveNodeBox_button))
         self.nodeConnection_button = CustomQt.QToolButton()
         self.nodeConnection_button.setText("Node Connection")
         self.nodeConnection_button.setObjectName("nodeConnectionTool")
         self.nodeConnection_button.clicked.connect(lambda: self.toolWatcher.setTool(self.nodeConnection_button))
-        # Tool node buttons
+
         self.jointTool_button = CustomQt.QToolNodeButton()
-        # self.jointTool_button.setText("Joint")
+
         self.jointTool_button.setObjectName("jointsNodeTool")
-        # self.jointTool_button.setIcon(QSize(65, 90), QIcon(dir + "\\src\\img\\" + "jointTool.png"));
+
         self.jointTool_button.setlabel("Joint node")
         self.toolWatcher.addButton(self.jointTool_button)
         self.jointTool_button.clicked.connect(lambda: self.toolWatcher.setTool(self.jointTool_button))
         self.LocatorTool_button = CustomQt.QToolNodeButton()
-        # self.LocatorTool_button.setText("Locator")
+
         self.LocatorTool_button.setObjectName("locatorsNodeTool")
-        # self.LocatorTool_button.setIcon(QSize(65, 90), QIcon(dir + "\\src\\img\\" + "locatorTool.png"));
+
         self.toolWatcher.addButton(self.LocatorTool_button)
         self.LocatorTool_button.clicked.connect(lambda: self.toolWatcher.setTool(self.LocatorTool_button))
         self.searchCircleNode_button = CustomQt.QToolNodeButton()
-        # self.searchBoxNode_button.setText("Search box")
+
         self.searchCircleNode_button.setObjectName("areaCircleNodeTool")
-        # self.searchCircleNode_button.setIcon(QSize(65, 90), QIcon(dir + "\\src\\img\\" + "searchCircleNode.png"));
+
         self.searchCircleNode_button.setlabel("Circle node")
         self.toolWatcher.addButton(self.searchCircleNode_button)
         self.searchCircleNode_button.clicked.connect(lambda: self.toolWatcher.setTool(self.searchCircleNode_button))
         self.searchBoxNode_button = CustomQt.QToolNodeButton()
-        # self.searchBoxNode_button.setText("Search box")
+
         self.searchBoxNode_button.setObjectName("areaBoxNodeTool")
-        # self.searchBoxNode_button.setIcon(QSize(65, 90), QIcon(dir + "\\src\\img\\" + "searchBoxNode.png"));
+
         self.searchBoxNode_button.setlabel("Box node")
         self.toolWatcher.addButton(self.searchBoxNode_button)
         self.searchBoxNode_button.clicked.connect(lambda: self.toolWatcher.setTool(self.searchBoxNode_button))
         self.searchFreeFormNode_button = CustomQt.QToolNodeButton()
-        # self.searchBoxNode_button.setText("Search box")
+
         self.searchFreeFormNode_button.setObjectName("freeFormNodeTool")
-        # self.searchFreeFormNode_button.setIcon(QSize(65, 90), QIcon(dir + "\\src\\img\\" + "freeFormNode.png"));
+
         self.searchFreeFormNode_button.setlabel("FF node")
         self.toolWatcher.addButton(self.searchFreeFormNode_button)
         self.searchFreeFormNode_button.clicked.connect(lambda: self.toolWatcher.setTool(self.searchFreeFormNode_button))
@@ -483,7 +483,7 @@ class mainWindow(QMainWindow):
         self.toolWatcher.addButton(self.searchFFNodeCreation)
         self.searchFFNodeCreation.obj = None
         self.searchFFNodeCreation.clicked.connect(lambda: self.toolWatcher.setTool(self.searchFFNodeCreation))
-        # buttonsLayout
+
         self.tab1Layout.addWidget(self.load_button)
         self.tab1Layout.addWidget(self.saveAs_button)
         self.tab1Layout.addWidget(self.save_button)
@@ -494,7 +494,7 @@ class mainWindow(QMainWindow):
         self.tab4Layout.addWidget(self.skin_track_button)
         self.tab4Layout.addWidget(self.skin_chassis_button)
         self.tab4Layout.addWidget(self.skin_wheels_button)
-        # self.tab4Layout.addWidget(self.skin_track_crash_button)
+
         self.tab4Layout.addLayout(self.skingGrid)
         self.tab5Layout.addWidget(self.forceClose_button)
         self.leftPanelLayout.addWidget(self.selectTool_button)
@@ -507,7 +507,7 @@ class mainWindow(QMainWindow):
         self.arrowGroupBoxLayout = QVBoxLayout(self)
         self.arrowGroupBoxLayout.addWidget(self.gradientWeightCheckBox)
         self.arrowGroupBoxLayout.addWidget(self.gradientWeightArrow)
-        # self.arrowGroupBoxLayout.addWidget(self.gradientSlider)
+
         self.weightTabLayout.addWidget(self.sharedWeight)
         self.weightTabLayout.addLayout(self.horizontalBox3)
         self.horizontalBox3.addWidget(self.skinWeight)
@@ -517,10 +517,10 @@ class mainWindow(QMainWindow):
         self.horizontalBox4.addWidget(self.vBoneWeightLabel)
         self.horizontalBox4.addWidget(self.vBoneWeight)
         self.weightTabLayout.addLayout(self.arrowGroupBoxLayout)
-        #########################################################################################################################
-        #                                                      Scenes
-        #########################################################################################################################
-        # Left Array
+
+
+
+
         self.graphicsSceneLeftLod0 = QScene();
         self.graphicsSceneLeftLod0.setObjectName("lod0Left")
         self.graphicsSceneLeftLod1 = QScene();
@@ -531,7 +531,7 @@ class mainWindow(QMainWindow):
         self.graphicsSceneLeftLod3.setObjectName("lod3Left")
         self.graphicsSceneLeftLod4 = QScene();
         self.graphicsSceneLeftLod4.setObjectName("lod4Left")
-        # Right Array
+
         self.graphicsSceneRightLod0 = QScene();
         self.graphicsSceneRightLod0.setObjectName("lod0Right")
         self.graphicsSceneRightLod1 = QScene();
@@ -563,7 +563,7 @@ class mainWindow(QMainWindow):
         self.graphicsView.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.graphicsView.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         self.lodsWatcher.setView(self.graphicsView)
-        #########################################################################################################################
+
         self.addDockWidget(Qt.TopDockWidgetArea, self.toolPanel)
         self.addDockWidget(Qt.RightDockWidgetArea, self.rightPanel)
         self.addDockWidget(Qt.LeftDockWidgetArea, self.leftPanel)
@@ -572,9 +572,9 @@ class mainWindow(QMainWindow):
         self.mainLayoutVertical.addWidget(self.commandLine)
         self.mainLayoutHorizontal.addWidget(self.graphicsView)
         self.setCentralWidget(self.centralWidget)
-        #########################################################################################################################
-        #                                                      Layers
-        #########################################################################################################################
+
+
+
         self.layersContainerLeftLod0 = CustomQt.QLayersWidget(self, self.graphicsView, self.graphicsSceneLeftLod0);
         self.graphicsSceneLeftLod0.layersWidget = self.layersContainerLeftLod0
         self.layersContainerLeftLod1 = CustomQt.QLayersWidget(self, self.graphicsView, self.graphicsSceneLeftLod1);
@@ -585,7 +585,7 @@ class mainWindow(QMainWindow):
         self.graphicsSceneLeftLod3.layersWidget = self.layersContainerLeftLod3
         self.layersContainerLeftLod4 = CustomQt.QLayersWidget(self, self.graphicsView, self.graphicsSceneLeftLod4);
         self.graphicsSceneLeftLod4.layersWidget = self.layersContainerLeftLod4
-        # Right Array
+
         self.layersContainerRightLod0 = CustomQt.QLayersWidget(self, self.graphicsView, self.graphicsSceneRightLod0);
         self.graphicsSceneRightLod0.layersWidget = self.layersContainerRightLod0
         self.layersContainerRightLod1 = CustomQt.QLayersWidget(self, self.graphicsView, self.graphicsSceneRightLod1);
@@ -611,9 +611,9 @@ class mainWindow(QMainWindow):
         for x in self.layersContainerRightArray:
             self.layersTabLayout.addWidget(x)
             x.hide()
-            # for x in range(10):
-        #     self.chassisItemLayer = CustomQt.QChasissContainer()
-        #     self.scrollAreaLayout.addWidget(self.chassisItemLayer)
+
+
+
         self.exclusionContainerLeftLod0 = CustomQt.QExceptionWidget(self.graphicsView, self.graphicsSceneLeftLod0);
         self.graphicsSceneLeftLod0.exceptionWidget = self.exclusionContainerLeftLod0
         self.exclusionContainerLeftLod1 = CustomQt.QExceptionWidget(self.graphicsView, self.graphicsSceneLeftLod1);
@@ -624,7 +624,7 @@ class mainWindow(QMainWindow):
         self.graphicsSceneLeftLod3.exceptionWidget = self.exclusionContainerLeftLod3
         self.exclusionContainerLeftLod4 = CustomQt.QExceptionWidget(self.graphicsView, self.graphicsSceneLeftLod4);
         self.graphicsSceneLeftLod4.exceptionWidget = self.exclusionContainerLeftLod4
-        # Right Array
+
         self.exclusionContainerRightLod0 = CustomQt.QExceptionWidget(self.graphicsView, self.graphicsSceneRightLod0);
         self.graphicsSceneRightLod0.exceptionWidget = self.exclusionContainerRightLod0
         self.exclusionContainerRightLod1 = CustomQt.QExceptionWidget(self.graphicsView, self.graphicsSceneRightLod1);
@@ -651,10 +651,10 @@ class mainWindow(QMainWindow):
             self.exceptionTabLayout.addWidget(x)
             x.hide()
         self.spacer = QSpacerItem(0, 15)
-        # self.exceptionTabLayout.addItem(self.spacer)
-        #########################################################################################################################
-        #                                                     Lods Buttons
-        #########################################################################################################################
+
+
+
+
         self.setLeftScene0_button = CustomQt.QLodButton()
         self.setLeftScene0_button.setText("lod0")
         self.setLeftScene0_button.setObjectName("leftLod0")
@@ -796,7 +796,7 @@ class mainWindow(QMainWindow):
             self.vertices.assignMesh(self.instance.tracksData[side][i], scene, "Tracks")
         except:
             pass
-            # self.popUpMessage("warning", "trackDraw")
+
         if side == 0:
             try:
                 for x in self.instance.chassisLodsLeft[i]:
@@ -808,7 +808,7 @@ class mainWindow(QMainWindow):
                     scene.addItem(self.wheelsDraw)
             except:
                 pass
-                # self.popUpMessage("warning", "wheelsDraw")
+
         if side == 1:
             try:
                 for x in self.instance.chassisLodsRight[i]:
@@ -819,7 +819,7 @@ class mainWindow(QMainWindow):
                     scene.addItem(self.wheelsDraw)
             except:
                 pass
-                # self.popUpMessage("warning", "wheelsDraw")
+
         try:
             for x in self.instance.jointsData[side]:
                 self.jointsDraw = jointsItem()
@@ -828,7 +828,7 @@ class mainWindow(QMainWindow):
                 scene.addItem(self.jointsDraw)
         except:
             pass
-            # self.popUpMessage("warning", "jointDraw")
+
         try:
             for x in self.instance.vJointData:
                 self.vJointDraw = vJointItem()
@@ -875,7 +875,7 @@ class mainWindow(QMainWindow):
             self.skin_chassis_button.setEnabled(False)
             self.skin_wheels_button.freeze = True
             self.skin_wheels_button.setEnabled(False)
-            # turn nessesarry layer
+
             for layerWidget in self.layersContainerLeftArray:
                 layerWidget.tankLayer.visibleLayer.setChecked(True)
                 layerWidget.chassisLayer.visibleLayer.setChecked(False)
@@ -883,13 +883,13 @@ class mainWindow(QMainWindow):
                 layerWidget.tankLayer.visibleLayer.setChecked(True)
                 layerWidget.chassisLayer.visibleLayer.setChecked(False)
         else:
-            # print
-            # ">>>>>>>>>>>>>>>>>>>>>>>>>>>"
+
+
             self.skin_chassis_button.freeze = False
             self.skin_chassis_button.setEnabled(True)
             self.skin_wheels_button.freeze = False
             self.skin_wheels_button.setEnabled(True)
-            # turn nessesarry layer
+
             for layerWidget in self.layersContainerLeftArray:
                 layerWidget.tankLayer.visibleLayer.setChecked(False)
                 layerWidget.chassisLayer.visibleLayer.setChecked(True)
@@ -970,7 +970,7 @@ class mainWindow(QMainWindow):
                         scene.removeItem(node)
                         nodesToClear += 1
         def skinFromCurrent(scenesSide):
-            # copy items from others scenes and skin, then return them back to their original place
+
             for scene in scenesSide:
                 if scene != self.graphicsView.scene():
                     self.flowingItems = []
@@ -992,7 +992,7 @@ class mainWindow(QMainWindow):
                                 if x.layer == "Chassis":
                                     self.graphicsView.scene().addItem(x)
                                     self.flowingItems.append(x)
-                    # do not skin 4 lod of chassis
+
                     if scene.objectName()[3] != "4":
                         try:
                             skinCurrentScene()
@@ -1000,19 +1000,19 @@ class mainWindow(QMainWindow):
                             print
                             "cant skin from ", scene.objectName()
                     else:
-                        # - skin 4 lod of Chassis
+
                         skinWheels.skinTrackFourLod(condition)
                         pass
                     for x in self.flowingItems:
                         scene.addItem(x)
-            # return items of original scene from temp array back
+
             for x in self.tempScene.items():
                 self.graphicsView.scene().addItem(x)
         if not self.skinAllFromCurrent.isChecked():
             skinCurrentScene()
         else:
             skinCurrentScene()
-            moveToTempScene()  # place items to tempScene
+            moveToTempScene()
             if not self.skinAllSides.isChecked():
                 if self.lodsWatcher.currentToolName[0:4] == "left":
                     skinFromCurrent(self.scenesLeftArray)
@@ -1021,49 +1021,49 @@ class mainWindow(QMainWindow):
             else:
                 if self.lodsWatcher.currentToolName[0:4] == "left":
                     skinFromCurrent(self.scenesLeftArray)
-                    # this is left side  , lets clean rights, paste there nodes and start defoult operation
+
                     for node in self.graphicsView.scene().items():
                         node.setSelected(True)
                     copyPaster = CopyPastClipBoard()
                     copyPaster.copyToClipBoard(self.graphicsView.scene())
                     for node in self.graphicsView.scene().items():
                         node.setSelected(False)
-                    # clear scene from old nodes
+
                     removeNodes(self.scenesRightArray[0])
-                    # paste nodes to right scene
+
                     copyPaster.pasteFromClipboard(self.scenesRightArray[0], QPointF(0, 0))
-                    # activate right window
+
                     self.setRightScene0_button.click()
-                    # skin right side
+
                     skinFromCurrent(self.scenesRightArray)
                     moveToTempScene()
                     skinFromCurrent(self.scenesRightArray)
-                    # clear Right windoe
+
                     removeNodes(self.scenesRightArray[0])
-                    # return to leftWin
+
                     self.setLeftScene0_button.click()
                 else:
                     skinFromCurrent(self.scenesRightArray)
-                    # this is right side  , lets clean rights, paste there nodes and start defoult operation
+
                     for node in self.graphicsView.scene().items():
                         node.setSelected(True)
                     copyPaster = CopyPastClipBoard()
                     copyPaster.copyToClipBoard(self.graphicsView.scene())
                     for node in self.graphicsView.scene().items():
                         node.setSelected(False)
-                    # clear scene from old nodes
+
                     removeNodes(self.scenesLeftArray[0])
-                    # paste nodes to right scene
+
                     copyPaster.pasteFromClipboard(self.scenesLeftArray[0], QPointF(0, 0))
-                    # activate right window
+
                     self.setLeftScene0_button.click()
-                    # skin right side
+
                     skinFromCurrent(self.scenesLeftArray)
                     moveToTempScene()
                     skinFromCurrent(self.scenesLeftArray)
-                    # clear Right windoe
+
                     removeNodes(self.scenesLeftArray[0])
-                    # return to leftWin
+
                     self.setRightScene0_button.click()
         self.popUpMessage("success", "Skined")
     def changeSelection(self):
@@ -1074,12 +1074,12 @@ class mainWindow(QMainWindow):
                 for x in self.graphicsView.scene().selectedItems():
                     if x.type in ['searchBoxItem', 'searchCircleItem', 'searchFreeFormItem']:
                         if x.gradient:
-                            # self.gradientSlider.setEnabled(True)
-                            # self.gradientSlider.setSpanSilently(x.weightGradient[0], x.weightGradient[1])
+
+
                             self.gradientText()
                             break
                         else:
-                            # self.gradientSlider.setSpanSilently(x.weightGradient[0], x.weightGradient[1])
+
                             self.gradientText()
                         if x.type == 'searchCircleItem':
                             if not x.weightDivider:
@@ -1089,8 +1089,8 @@ class mainWindow(QMainWindow):
                         else:
                             self.vBoneWeight.setEnabled(False)
             else:
-                # self.gradientSlider.setEnabled(False)
-                # self.gradientSlider.setSpanSilently(0, 10)
+
+
                 self.gradientText()
             self.skinWeightLine.setEnabled(state)
         if len(self.graphicsView.scene().selectedItems()) > 0:
@@ -1130,12 +1130,12 @@ class mainWindow(QMainWindow):
                     x.gradient = self.gradientWeightCheckBox.isChecked()
                     if x.gradient:
                         x.showArrow()
-                        # self.gradientSlider.setEnabled(True)
+
                         self.vBoneWeight.setEnabled(False)
                         self.vBoneWeight.setText('0')
                     else:
                         x.hideArrow()
-                        # self.gradientSlider.setEnabled(False)
+
                         self.vBoneWeight.setEnabled(True)
                         self.vBoneWeight.setText(str(x.vBoneWeight))
     def gradientSetWeight(self):
@@ -1143,11 +1143,11 @@ class mainWindow(QMainWindow):
             if x.type == 'searchBoxItem' or x.type == 'searchFreeFormItem':
                 if x.gradient:
 
-                    # x.weightGradient = [self.gradientSlider.lowerValue, self.gradientSlider.upperValue]
+
                     print (x.weightGradient)
     def setWeight(self, *args):
         if args:
-            # this is for hotkeys call---and just dublicate of doSet():----------------------------------------------------------
+
             if self:
                 try:
                     if len(self.graphicsView.scene().selectedItems()) > 0:
@@ -1168,7 +1168,7 @@ class mainWindow(QMainWindow):
                 except:
                     print
                     "Start Exception"
-            # -------------------------------------------------------------------------------------------
+
             def doSet():
                 if len(self.graphicsView.scene().selectedItems()) > 0:
                     for x in self.graphicsView.scene().selectedItems():
@@ -1336,8 +1336,8 @@ class mainWindow(QMainWindow):
         return False
     def gradientText(self):
         print('OPS')
-        # self.gradientWeightArrow.textStart.setPlainText(str(float(self.gradientSlider.lowerValue) / 10))
-        # self.gradientWeightArrow.textFinish.setPlainText(str(float(self.gradientSlider.upperValue) / 10))
+
+
 
 def reload_all_modules(module_name):
     for m in list(sys.modules):
@@ -1350,8 +1350,8 @@ def main():
     reload_all_modules('full_metal_toolset')
     gui = mainWindow()
     gui.show()
-    # return gui
+
 
 if __name__ == '__main__':
-    # reload_all_modules('full_metal_toolset')
+
     main()
